@@ -17,6 +17,7 @@ public class HWWebDriver {
         By buttonInner = By.cssSelector("span[class = 'a-button-inner']");
         By todaysDeal = By.cssSelector("a[data-csa-c-slot-id=\"nav_cs_0\"]");
         By priceLocator = By.cssSelector("span[class = 'gb-font-size-medium inlineBlock unitLineHeight dealPriceText']");
+        By oldPriceLocator = By.cssSelector("span[class = 'a-color-base gb-font-size-base inlineBlock unitLineHeight a-text-strike']");
 
         driver.get("https://www.amazon.com/");
         driver.findElement(buttonInner).click();
@@ -27,8 +28,11 @@ public class HWWebDriver {
         driver.findElement(todaysDeal).click();
 
         WebElement price = driver.findElement(priceLocator);
+        WebElement oldPrice = driver.findElement(oldPriceLocator);
         String text = price.getText().replace("$", "");
-        System.out.println("The price is " + text);
+        String text2 = oldPrice.getText().replace("$", "");
+        System.out.println("New price is " + text);
+        System.out.println("Old price is " + text2);
         driver.quit();
     }
 }
