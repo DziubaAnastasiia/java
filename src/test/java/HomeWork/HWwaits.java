@@ -20,6 +20,10 @@ public class HWwaits {
     By signInButton = By.cssSelector("a[data-nav-ref=\"nav_ya_signin\"]");
     By createAccount = By.id("createAccountSubmit");
     By continueButton = By.id("continue");
+    By customerName = By.id("ap_customer_name");
+    By email = By.id("ap_email");
+    By password = By.id("ap_password");
+    By secondPass = By.id("ap_password_check");
 
     @BeforeMethod
     public void beforeMethod() {
@@ -36,7 +40,7 @@ public class HWwaits {
 
     @Test
     public void signInTestCustomerNameRedBorder(){
-        By customerName = By.id("ap_customer_name");
+
         WebDriverWait wait = new WebDriverWait(driver,10, 500);
         driver.get("https://www.amazon.com/");
         driver.findElement(signInButton).click();
@@ -51,7 +55,7 @@ public class HWwaits {
 
     @Test
     public void EmailInputRedBorder(){
-        By email = By.id("ap_email");
+
         WebDriverWait wait = new WebDriverWait(driver,10, 500);
         driver.get("https://www.amazon.com/");
         driver.findElement(signInButton).click();
@@ -66,7 +70,7 @@ public class HWwaits {
 
     @Test
     public void PasswordInputRedBorder(){
-        By password = By.id("ap_password");
+
         WebDriverWait wait = new WebDriverWait(driver,10, 500);
         driver.get("https://www.amazon.com/");
         driver.findElement(signInButton).click();
@@ -81,10 +85,6 @@ public class HWwaits {
 
     @Test
     public void NegativeReEnterPasswordRedBorder(){
-        By customerName = By.id("ap_customer_name");
-        By email = By.id("ap_email");
-        By password = By.id("ap_password");
-        By secondPass = By.id("ap_password_check");
 
         driver.get("https://www.amazon.com/");
         driver.findElement(signInButton).click();
@@ -104,10 +104,7 @@ public class HWwaits {
 
     @Test
     public void noRedBorderEnterCustomerName(){
-        By customerName = By.id("ap_customer_name");
-        By email = By.id("ap_email");
-        By password = By.id("ap_password");
-        By secondPass = By.id("ap_password_check");
+
         driver.get("https://www.amazon.com/");
         driver.findElement(signInButton).click();
         driver.findElement(createAccount).click();
